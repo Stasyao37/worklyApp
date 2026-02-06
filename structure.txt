@@ -1,0 +1,22 @@
+productivity-tui/
+├── main.go              # Точка входа
+├── go.mod
+├── go.sum
+├── README.md
+├── models/              # Модели для вкладок
+│   ├── weather.go
+│   ├── notes.go
+│   ├── todo.go
+│   └── traffic.go
+├── ui/                  # Компоненты интерфейса
+│   ├── components.go
+│   ├── styles.go
+│   └── layout.go
+├── services/            # Логика и API
+│   ├── weather/
+│   │   ├── api.go
+│   │   └── parser.go
+│   └── storage/
+│       └── database.go
+└── config/              # Конфигурация
+    └── config.go
