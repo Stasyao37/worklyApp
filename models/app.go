@@ -30,3 +30,20 @@ func newApp() *AppModel {
 		activeTab: 0,
 	}
 }
+
+func (m *AppModel) Init() tea.Cmd {
+	var cmds []tea.Cmd
+	for _, tab := range m.tabs {
+		cmds = append(cmds, tab.Init())
+	}
+	return tea.Batch(cmds...)
+}
+
+func (m *AppModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
+	switch msg := msg.(type) {
+	case tea.WindowSizeMsg:
+		m.width = msg.Width
+		m.height = msg.Height
+		return m, nil
+	}
+}
