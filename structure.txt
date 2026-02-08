@@ -1,4 +1,4 @@
-productivity-tui/
+worklyApp/
 ├── main.go              # Точка входа
 ├── go.mod
 ├── go.sum
